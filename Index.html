@@ -1,0 +1,533 @@
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтр13 — Чистая вода в Саранске и Мордовии | Анализ, подбор, установка под ключ</title>
+    <!-- Подключаем современный шрифт Inter для чистоты и читаемости -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1e2b3c;
+            background-color: #ffffff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Цветовая палитра — спокойная, внушающая доверие:
+           глубокий синий #0f2b46, акцентный голубовато-серый #2c5f7e,
+           светлый фон #f7f9fc, мягкий белый #ffffff.
+        */
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #0f2b46;
+            letter-spacing: -0.5px;
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #3f4e5f;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #1e4a6b;
+            color: #ffffff;
+            padding: 16px 36px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.25s ease, transform 0.15s ease;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+
+        .btn:hover {
+            background-color: #0f354d;
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* --- Hero Block --- */
+        .hero {
+            background: linear-gradient(105deg, #f5f9fe 0%, #eef3f9 100%);
+            padding: 80px 0 80px;
+            text-align: center;
+            border-bottom: 1px solid #e0e8f0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #0a2538;
+            margin-bottom: 24px;
+            letter-spacing: -0.8px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 60px 0 60px;
+            }
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: #2c4b64;
+            max-width: 700px;
+            margin: 0 auto 36px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .hero .btn {
+            background-color: #1e4a6b;
+            padding: 18px 44px;
+            font-size: 1.05rem;
+            box-shadow: 0 6px 18px rgba(15, 43, 70, 0.1);
+        }
+
+        /* --- Общие секции --- */
+        section {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        .bg-light {
+            background-color: #f7f9fc;
+        }
+
+        /* --- Блок локальной специфики --- */
+        .local-water {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .local-water .text {
+            flex: 1 1 300px;
+        }
+
+        .local-water .text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .local-water .stats {
+            flex: 1 1 280px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border-left: 4px solid #2c5f7e;
+            padding: 20px 24px;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+            flex: 1 1 120px;
+        }
+
+        .stat-card .label {
+            font-size: 0.95rem;
+            color: #546b80;
+            margin-bottom: 6px;
+        }
+
+        .stat-card .value {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #0f2b46;
+        }
+
+        /* --- Шаги работы --- */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .step {
+            background: #ffffff;
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease;
+            text-align: center;
+        }
+
+        .step:hover {
+            transform: translateY(-4px);
+        }
+
+        .step .icon {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #0f2b46;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: #4a5c6e;
+            margin-bottom: 0;
+        }
+
+        /* --- Преимущества --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 36px;
+            margin-top: 20px;
+        }
+
+        .benefit {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .benefit .marker {
+            font-size: 1.8rem;
+            color: #2c5f7e;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .benefit h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0f2b46;
+        }
+
+        .benefit p {
+            color: #3f4e5f;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* --- Карточки решений --- */
+        .solutions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+        }
+
+        .solution-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 32px 24px;
+            transition: box-shadow 0.25s ease, border-color 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .solution-card:hover {
+            border-color: #bdd3e0;
+            box-shadow: 0 12px 28px rgba(15, 43, 70, 0.06);
+        }
+
+        .solution-card .emoji {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+        }
+
+        .solution-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #0a2538;
+        }
+
+        .solution-card p {
+            font-size: 0.95rem;
+            color: #44566c;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .solution-card .note {
+            font-style: italic;
+            color: #1e4a6b;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #1e4a6b;
+            color: #1e4a6b;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s, color 0.2s;
+            margin-top: 16px;
+            align-self: flex-start;
+        }
+
+        .btn-outline:hover {
+            background: #1e4a6b;
+            color: #fff;
+        }
+
+        /* --- Контакты / CTA --- */
+        .cta-block {
+            background: #0f2b46;
+            color: #ffffff;
+            border-radius: 18px;
+            padding: 56px 48px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cta-block h2 {
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .cta-block p {
+            color: #cddde9;
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-block .btn {
+            background-color: #ffffff;
+            color: #0f2b46;
+            font-weight: 700;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-block .btn:hover {
+            background-color: #e6eff6;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 32px 0;
+            font-size: 0.9rem;
+            color: #6b7d8e;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #e0e8f0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Первый экран (Hero Block) -->
+    <header class="hero">
+        <div class="container">
+            <h1>Чистая вода в Саранске — без гаданий на кофейной гуще. Сначала анализ, потом фильтр.</h1>
+            <p class="subtitle">
+                Серьёзный и лёгкий подход к качеству вашей жизни с Фильтр13. Возьмём воду, исследуем, подберём лучшее и установим под ключ. Опыт — более 20 лет.
+            </p>
+            <a href="#cta" class="btn">Оставить заявку на анализ</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Блок «Почему это важно именно здесь» (локальная специфика) -->
+        <section>
+            <div class="container">
+                <h2>Почему это важно именно здесь</h2>
+                <div class="local-water">
+                    <div class="text">
+                        <p>Вода в квартирах Саранска и районах Мордовии имеет свой характер. Мы не пугаем — мы знаем её особенности и умеем с ними работать.</p>
+                        <p>Ржавчина, оседающая на сантехнике, жёсткость, из-за которой выходит из строя бытовая техника, и повышенное содержание фтора — это не абстрактная проблема, а конкретные показатели, которые мы регулярно видим в протоколах лаборатории. Это решаемо, когда за дело берутся с цифрами в руках.</p>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="label">Характерные примеси</div>
+                            <div class="value">Ржавчина</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Типичная проблема</div>
+                            <div class="value">Жёсткость</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Превышение нормы</div>
+                            <div class="value">Фтор</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок «Как мы работаем» (4 шага) -->
+        <section class="bg-light">
+            <div class="container">
+                <h2>Как мы работаем — и почему это по-настоящему легко</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="icon">💧</div>
+                        <h3>1. Отбираем пробу</h3>
+                        <p>Приезжаем к вам и грамотно, по всем правилам, отбираем воду для анализа. Вам не нужно ничего везти самостоятельно.</p>
+                    </div>
+                    <div class="step">
+                        <div class="icon">🔬</div>
+                        <h3>2. Исследуем в лаборатории</h3>
+                        <p>Передаём пробу в независимую лабораторию. Получаем протокол с точными цифрами, а не примерными описаниями.</p>
+                    </div>
+                    <div class="step">
+                        <div class="icon">📋</div>
+                        <h3>3. Готовим предложение</h3>
+                        <p>Совместно с инженерами брендовых компаний формируем несколько вариантов. Находим оптимальное «цена-качество» и обсуждаем с вами.</p>
+                    </div>
+                    <div class="step">
+                        <div class="icon">✅</div>
+                        <h3>4. Устанавливаем и обслуживаем</h3>
+                        <p>Монтаж под ключ и дальнейшее регулярное сервисное обслуживание. Вы просто пользуетесь чистой водой.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок «Почему выбирают Фильтр13» (доверие и преимущества) -->
+        <section>
+            <div class="container">
+                <h2>Почему выбирают Фильтр13</h2>
+                <div class="benefits-grid">
+                    <div class="benefit">
+                        <div class="marker">⏳</div>
+                        <div>
+                            <h3>20 лет опыта</h3>
+                            <p>Мы работаем с системами, проверенными временем, а не громкими рекламными кампаниями. Видим, когда бренд пытается удержать ценник за счёт ухудшения комплектующих, и не допускаем этого в ваш дом.</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="marker">⚖️</div>
+                        <div>
+                            <h3>Цена не главное условие</h3>
+                            <p>Вода — ресурс, который вы пьёте, на котором готовите и моете детей. Экономия за счёт урезания качества здесь недопустима. Мы объясняем это спокойно и аргументированно.</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="marker">🔍</div>
+                        <div>
+                            <h3>Реальное качество, а не маркетинг</h3>
+                            <p>Мы не ведёмся на уловки брендов, маскирующих удешевление начинки удорожанием логистики. Для нас важнее, чтобы вода стала безопасной и комфортной на годы.</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="marker">🤝</div>
+                        <div>
+                            <h3>Лёгкое взаимодействие</h3>
+                            <p>Вы не погружаетесь в технические дебри. Мы берём всё на себя — от первой пробы до сервисного обслуживания — и говорим с вами на языке результата.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок «Решения» (витрина без прайса, но с логикой) -->
+        <section class="bg-light">
+            <div class="container">
+                <h2>Решения для вашей воды и вашего сценария</h2>
+                <div class="solutions">
+                    <div class="solution-card">
+                        <div class="emoji">🏢</div>
+                        <h3>Для квартиры</h3>
+                        <p>Магистральные фильтры механической очистки на холодную и горячую воду на общий ввод + система обратного осмоса под мойку с отдельным краном для питьевой воды. Забудьте о ржавчине, жёсткости и посторонних привкусах.</p>
+                        <p class="note">Состав фильтров определяется только вашей водой.</p>
+                        <a href="#cta" class="btn-outline">Подобрать под мою воду</a>
+                    </div>
+                    <div class="solution-card">
+                        <div class="emoji">🍽️</div>
+                        <h3>Для кафе и столовой</h3>
+                        <p>Обратный осмос повышенной производительности с предварительной механической очисткой. Чистая вода для приготовления пищи и напитков — без перебоев и с запасом по мощности.</p>
+                        <p class="note">Состав фильтров определяется только вашей водой.</p>
+                        <a href="#cta" class="btn-outline">Подобрать под мою воду</a>
+                    </div>
+                    <div class="solution-card">
+                        <div class="emoji">🏡</div>
+                        <h3>Для частного дома и коттеджа</h3>
+                        <p>Подбор загрузки для фильтра на весь дом строго по составу воды. Никаких типовых наборов — мы исследуем именно вашу скважину или колодец, чтобы вся вода в доме была безопасной и мягкой.</p>
+                        <p class="note">Состав фильтров определяется только вашей водой.</p>
+                        <a href="#cta" class="btn-outline">Подобрать под мою воду</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок контактов и призыва (CTA) -->
+        <section id="cta">
+            <div class="container">
+                <div class="cta-block">
+                    <h2>Первый шаг к заботе о себе — это лёгкий шаг</h2>
+                    <p>Работаем по Саранску и всем районам Мордовии. Оставьте заявку на анализ воды — и получите не просто цифры, а понятный план действий по очистке.</p>
+                    <a href="#" class="btn">Оставить заявку на анализ</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <hr>
+    <footer>
+        <div class="container footer-note">
+            © Фильтр13, Саранск и Мордовия. Более 20 лет помогаем превращать местную воду в чистую и безопасную — с заботой о вашем качестве жизни.
+        </div>
+    </footer>
+</body>
+</html>
+```
